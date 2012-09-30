@@ -9,6 +9,9 @@ clear
 echo $bldyellow"What's your name?"
 read NAME
 echo "Hello $NAME! Are you ready for some mad math?"
+echo ""
+echo "Select (1) for Addition(+) or (2) for Subtraction(-)"
+read TYPE
 echo "Enter math level... $treset"
 read LEVEL
 numc=0
@@ -19,15 +22,33 @@ do
 RANGE=10
 number=$RANDOM
 let "number %= $RANGE"
+if [ $TYPE = 1 ];
+then
 echo "$LEVEL + $number = ?"
+else
+	if [ $LEVEL -ge $number ];
+		then
+echo "$LEVEL - $number = ?"
+else
+	echo "$number - $LEVEL = ?"
+fi
+fi
 echo ""
-echo "Type an answer and hit ENTER (l - change level, x - exit)"
+echo "Type an answer and hit ENTER (t - change add/sub, l - change level, x - exit)"
 selection=$number
 
 read ANSWER
-
-CORRECT=$(($LEVEL+$selection))
-
+if [ $TYPE = 1 ];
+then
+CORRECT=$(($LEVEL + $selection))
+else
+	if [ $LEVEL -ge $number ];
+		then
+CORRECT=$(($LEVEL - $selection))
+else
+CORRECT=$(($selection - $LEVEL))
+fi
+fi	
 if [ $ANSWER = $CORRECT ];
 then
 numc=$((1+$numc))
@@ -40,6 +61,12 @@ elif [ $ANSWER = 'l' ];
 then
 echo "Enter a new math level.."
 read LEVEL
+numc=0
+numw=0
+elif [  $ANSWER = 't' ];
+then
+echo "Select (1) for Addition(+) or (2) for Subtraction(-)"
+read TYPE
 numc=0
 numw=0
 elif [  $ANSWER = 'x' ];
