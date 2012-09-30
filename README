@@ -1,0 +1,17 @@
+README
+
+This is a bash script written for kiddos learning math in grade school for the 0 through 10 math.  Currently the script can be run and will do the following:
+
+- What is your name?
+- Addition or Subtraction
+- Level (repeated number)
+- Keeps track of correct vs incorrect 
+- Hit l for level change (resets correct vs incorrect)
+- Hit t for changing addition or subtraction (resets correct vs incorrect)
+- Hit x to exit (gives summary of current level)
+
+Wrote this for my daughter when she hit first grade...
+
+enjoy...
+
+~lou
