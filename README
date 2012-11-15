@@ -4,7 +4,7 @@ This is a bash script written for kiddos learning math in grade school for the 0
 
 - What is your name?
 - Addition or Subtraction
-- Level (repeated number)
+- Level (repeated number or random)
 - Keeps track of correct vs incorrect 
 - Hit l for level change (resets correct vs incorrect)
 - Hit t for changing addition or subtraction (resets correct vs incorrect)
